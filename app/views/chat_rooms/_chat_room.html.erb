@@ -1,1 +1,4 @@
-<li><%= link_to "Enter #{chat_room.title}", chat_room_path(chat_room) %></li>
+<div class="row"><%= link_to "Go chat #{chat_room.title}", chat_room_path(chat_room),class: "btn btn-success btn-sm" %>
+<li>
+<%= link_to "Delete", chat_room_path(chat_room), method: :delete, data: {confirm: "Are you sure?"}, class: "btn btn-primary btn-sm" %>
+</div>
