@@ -19,6 +19,16 @@ h1 {
 
 
 footer {
-  margin-top: 50px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: left;
+  padding: 0.5rem 13rem;
 }
 
+.btn {
+  margin-top: 5px;
+}

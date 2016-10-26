@@ -2,44 +2,32 @@
 <html>
 <head>
   <title>Chat rooms</title>
-
-  
   <%= csrf_meta_tags %>
-
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
-
 </head>
-
 <body>
+  <nav class="navbar navbar-dark bg-inverse">
+    <div class="container">
+      <%= link_to 'Chat rooms', root_path, class: 'navbar-brand' %>
 
-<nav class="navbar navbar-dark bg-inverse">
-<div class="container">
-  <%= link_to 'Chat rooms', root_path, class: 'navbar-brand' %>
-
-  <% if user_signed_in? %>
-    <ul class="nav navbar-nav pull-xs-right">
-      <li class="nav-item">
-        <span class="text-muted">Logged in as <strong><%= current_user.name %></strong></span>
-      </li>
-      <li class="nav-item active">
-        <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
-      </li>
-    </ul>
-  <% end %>
-  </div>
-</nav>
-
-<div class="container">
-  <%= yield %>
-</div>
-
-<footer>
+      <% if user_signed_in? %>
+      <ul class="nav navbar-nav pull-xs-right">
+        <li class="nav-item">
+          <span class="text-muted">Logged in as <strong><%= current_user.name %></strong></span>
+        </li>
+        <li class="nav-item active">
+          <%= link_to 'Log out', destroy_user_session_path, method: :delete, class: 'nav-link' %>
+        </li>
+      </ul>
+      <% end %>
+    </div>
+  </nav>
   <div class="container">
-    <p class="text-muted"><%= link_to '2016 Mindaugas Bernotas', 'https://young-waters-97301.herokuapp.com/' %></p>
-  </div>
-</footer>
-</body>
-
+    <%= yield %>
+    <footer>
+      <p class="text-muted"><%= link_to '2016 Mindaugas Bernotas', 'https://young-waters-97301.herokuapp.com/' %></p>
+       </div>
+    </footer>
+  </body>
 </html>
